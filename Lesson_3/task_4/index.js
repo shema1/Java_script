@@ -34,6 +34,7 @@ console.log("undefined || null || 0 || '' || null: ", undefined || null || 0 || 
 const customAmount = null; // не выводим
 const defaultAmount = 17; // не выводим
 const amount = customAmount || defaultAmount; // выводим значкние переменной amount в формате console.log('amount: ', amount);
+console.log('amount: ', amount);
 
 
 /* && находит первое ложное значение */
