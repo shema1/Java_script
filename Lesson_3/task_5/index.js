@@ -1,73 +1,32 @@
-const a = 17;
-const b = 5;
-a > b;
-a <= b;
-a == b;
-a != b;
+let age = 22;
+let amount = 50;
+if (true) console.log('I\'m in');
 
-console.log("a > b: ", a > b);
-console.log("a <= b: ", a <= b);
-console.log("a == b: ", a == b);
-console.log("a != b: ", a != b);
+if (false) {
+    console.log('I\'m not in');
+}
 
+if ('text') {
+    console.log('Yes');
+}
 
-/* сравнение строк */
-
-'a' < 'b';
-'ab' > 'a';
-
-console.log("'a' < 'b': ", 'a' < 'b');
-console.log("'ab' > 'a': ", 'ab' > 'a');
-
-/* строгое сравнение */
-
-17 === 1;
-17 === 17;
-17 === '17';
-17 === true;
-'0' === '';
-true === false;
-true === true;
-null === undefined;
-false === 0;
-
-console.log("17 === 1: ", 17 === 1);
-console.log("17 === 17: ", 17 === 17);
-console.log("17 === '17': ", 17 === '17');
-console.log("17 === true: ", 17 === true);
-console.log("'0' === '': ", '0' === '')
-console.log("true === false: ", true === false);
-console.log("true === true: ", true === true);
-console.log("null === undefined: ", null === undefined);
-console.log("false === 0: ", false === 0);
+if (null) {
+    console.log('Yes');
+} else {
+    console.log('Else');
+}
 
 
-/* нестрогое сравнение */
+if (age < 16) {
+    console.log('Too young');
+} else if (age >= 16 && age < 18) {
+    console.log('Almost ready');
+} else if (age >= 18 && age < 65) {
+    console.log('Ready');
+} else {
+    console.log('Else');
+}
 
-17 == '17';
-'0' == '';
-'0' == '"';
-null == undefined;
-false == 0;
+// Тернаный оператор ? : ( const result = условие ? значение1 : значение2; )
 
-console.log("17 == '17': ", 17 == '17');
-console.log("'0' == '': ", '0' == '');
-console.log("0 == '': ", 0 == '');
-console.log("null == undefined: ", null == undefined);
-console.log("false == 0: ", false == 0);
-
-
-
-/* осторожно c null и undefined */
-
-undefined == null;
-undefined == 0;
-null == 0;
-undefined < 0;
-undefined > 0;
-
-console.log("undefined == null: ", undefined == null);
-console.log("undefined == 0: ", undefined == 0);
-console.log("null == 0: ", null == 0);
-console.log("undefined < 0: ", undefined < 0);
-console.log("undefined > 0: ", undefined > 0);
+const result = amount > 17 ? 'full' : 'empty';
