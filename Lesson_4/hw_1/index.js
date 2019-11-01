@@ -1,7 +1,7 @@
-const n = 20;
+const n = 12;
+let count = 1;
 let sum = '';
-
-for (let i = 0; i <= n; i++) {
-    console.log(sum += i);
-
+while (count <= n) {
+    console.log(sum += a);
+    a++;
 }
