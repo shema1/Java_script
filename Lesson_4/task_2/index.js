@@ -5,7 +5,7 @@ let result = 1;
 
 do {
     if (count % 2 == 1) {
-        result *= m;
+        result *= count;
     }
     count++
 } while (count < n);
