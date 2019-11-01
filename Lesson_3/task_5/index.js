@@ -1,5 +1,5 @@
 let age = 22;
-let amount = 50;
+let amount = 1;
 if (true) console.log('I\'m in');
 
 if (false) {
