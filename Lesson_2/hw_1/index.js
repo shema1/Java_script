@@ -1,8 +1,8 @@
-const userName = 'John';
-const greeting = "I'm John";
-const _profession = 'Developer';
-const $hobby = 'Walking';
-const favouriteDessert = 'cake';
-let pet_ = 'dog';
-let superNumber;
-superNumber = 17;
+let a = 4;
+let b = 2;
+console.log("a: " + a);
+console.log("b: " + "[" + b + "]");
+console.log(a - b);
+console.log(a + b);
+console.log(a / b);
+console.log(a * b);
