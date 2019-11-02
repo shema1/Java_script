@@ -8,8 +8,4 @@ let a = sum % 1234;
 let b = sum / 1234;
 
 
-if (a > b) {
-    console.log('true')
-} else {
-    console.log('false')
-}
+console.log(b > a);
