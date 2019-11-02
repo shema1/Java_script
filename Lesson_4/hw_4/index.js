@@ -1,7 +1,5 @@
-const n = 20;
-let count = 1;
-let sum = '';
-while (count <= n) {
-    console.log(sum += count);
-    count++;
+let sum = 0;
+for (let i = 0; i < 10000000; i++) {
+    sum += i;
 }
+console.log(sum);
