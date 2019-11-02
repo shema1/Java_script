@@ -1,9 +1,8 @@
 let sum = 0;
-let a = 50;
-let b = 100;
 
 
-for (let i = a; i < b; i++) {
+
+for (let i = 0; i <= 100; i++) {
 
     if (i % 2 != 0) {
         console.log('Found')
