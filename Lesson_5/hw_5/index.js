@@ -1,11 +1,10 @@
-let sum = 0;
+function findDivCount(a, b, n) {
+    for (let i = a; i <= b; i++) {
+        if (i % n == 0) {
+            console.log(a);
+        }
 
-for (let i = 0; i <= 1000; i++) {
-    sum += i;
+    }
 }
 
-let a = sum % 1234;
-let b = sum / 1234;
-
-
-console.log(b > a);
+findDivCount(10, 30, 3);
