@@ -1,17 +1,8 @@
-const m = 1;
-const n = 20;
-let result = 0;
+function getPrimes(num) {
 
-
-for (let i = m; i <= n; i++) {
-    if (i % 2 === 0 && i % 4 !== 0) {
-        result += i;
-    } else if (i % 3 === 0) {
-        result -= i;
-    } else if (i % 4 === 0) {
-        result *= i;
-    }
-    if (i % 5 === 0) {
-        console.log(i)
+    for (let i = 1; i <= num; i++) {
+        console.log(i);
     }
 }
+
+// getPrimes(10);
