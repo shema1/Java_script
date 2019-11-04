@@ -1,11 +1,30 @@
-function findDivCount(a, b, n) {
-    let count = 0
-    for (let i = a; i <= b; i++) {
-        if (i % n === 0) {
-            count++;
+const numbers = [80, 22, 78, 6, 14, 111];
+
+function checker(arr) {
+
+    let max = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
         }
+
     }
-    return count
+    let min = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+
+    }
+
+    if (max + min > 1000) {
+        return true
+    } else {
+        return false
+    }
 }
 
-findDivCount(10, 40, 3);
+
+
+
+console.log(checker(numbers));
