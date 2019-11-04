@@ -5,6 +5,5 @@ function getSum(a, b) {
             sum += i
         }
     }
+    return sum
 }
-
-getSum(14, 58);
