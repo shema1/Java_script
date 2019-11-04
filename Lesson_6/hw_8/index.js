@@ -1,11 +1,13 @@
-function findDivCount(a, b, n) {
-    let count = 0
-    for (let i = a; i <= b; i++) {
-        if (i % n === 0) {
-            count++;
-        }
+const numbers = [80, 22, 78, 6, 14, 111];
+
+function cloneArr(arr) {
+    let newNumbers = [];
+    for (let i = 0; i < arr.length; i++) {
+        newNumbers.push(arr[i]);
+
     }
-    return count
+
+    return newNumbers;
 }
 
-findDivCount(10, 40, 3);
+console.log(cloneArr(numbers));
