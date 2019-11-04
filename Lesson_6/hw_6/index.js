@@ -5,8 +5,11 @@ let balances = [3200, 11002, 300, 6824]
 function withdraw(clients, balances, client, amount) {
 
     let indexUser = clients.indexOf(client);
-    balances[indexUser] -= amount
-
+    if (balances[indexUser] >= amount) {
+        balances[indexUser] -= amount
+    } else {
+        return -1;
+    }
 
     return clients, balances;
 }
