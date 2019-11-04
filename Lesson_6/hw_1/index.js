@@ -1,9 +1,15 @@
-function getSum(a, b) {
-    let sum = 0;
-    for (let i = a; i <= b; i++) {
-        if (i % 2 === 0) {
-            sum += i
+const numbers = [8, 2, 7, 6, 4, 1];
+
+function squareArray(arr) {
+    let squareNumbers = [];
+    if (!Array.isArray(arr)) {
+        return null
+    } else {
+        for (let i = 0; i < array.length; i++) {
+            squareNumbers.push(arr[i] * arr[i]);
         }
     }
-    return sum
+    return squareNumbers;
 }
+
+console.log(squareNumbers);
