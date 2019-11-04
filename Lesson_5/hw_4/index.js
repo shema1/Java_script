@@ -1,5 +1,16 @@
-let sum = 0;
-for (let i = 0; i <= 10000000; i++) {
-    sum += i;
+function compareSums(a, b, c, d) {
+
+    if (sum(a, b) > sum(c, d)) {
+        return true;
+    } else {
+        return false;
+    }
 }
-console.log(sum);
+
+function sum(from, to) {
+    let sum = 0;
+    for (let i = from; i <= to; i++) {
+        sum += i;
+    }
+    return sum;
+}
