@@ -1,7 +1,10 @@
-const n = 20;
-let count = 1;
-let sum = '';
-while (count <= n) {
-    console.log(sum += count);
-    count++;
+function getSum(a, b) {
+    let sum = 0;
+    for (let i = a; i < b; i++) {
+        if (i % 2 === 0) {
+            sum += i
+        }
+    }
 }
+
+getSum(14, 58);
