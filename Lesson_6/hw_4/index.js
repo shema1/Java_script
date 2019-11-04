@@ -1,16 +1,20 @@
-function compareSums(a, b, c, d) {
+const numbers = [1, 2, 2, 3, 3, 4, 5, 6];
 
-    if (sum(a, b) > sum(c, d)) {
-        return true;
-    } else {
-        return false;
+function uniqueCount(arr) {
+
+    let count = 0;
+    let uniqueNumbers = [];
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (uniqueNumbers.indexOf(arr[i]) < 0) {
+            uniqueNumbers.push(arr[i]);
+            count++;
+        }
+
+
     }
+    return count;
 }
 
-function sum(from, to) {
-    let sum = 0;
-    for (let i = from; i <= to; i++) {
-        sum += i;
-    }
-    return sum;
-}
+console.log(uniqueCount(numbers));
