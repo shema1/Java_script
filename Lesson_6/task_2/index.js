@@ -1,4 +1,14 @@
-function sayHi(name) {
-    const greeting = 'Hi, ' + name;
-    console.log(greeting);
+const numbers = [10, 45, 99, 1, 65, 7, 12, 23];
+
+function getSum(arr) {
+    let sum = 0;
+    if (!Array.isArray) {
+        return null
+    } else {
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum
+    }
+
 }
