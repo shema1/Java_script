@@ -1,11 +1,14 @@
-function findDivCount(a, b, n) {
-    let count = 0
-    for (let i = a; i <= b; i++) {
-        if (i % n === 0) {
-            count++;
+const numbers = [1, 2, 2, 3, 3, 4, 5, 6, 7, 7, 7, 8, 9, 10, 10];
+
+function removeDuplicates(arr) {
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (newArr.indexOf(arr[i]) < 0) {
+            newArr.push(arr[i]);
         }
     }
-    return count
+    return newArr;
 }
 
-findDivCount(10, 40, 3);
+console.log(removeDuplicates(numbers));
