@@ -1,11 +1,6 @@
 const sortDesc = numbers => {
-    function sompare(a, b) {
-        if (a > b) {
-            return 1;
-        }
-        return -1;
-    }
-    numbers.sort(sompare);
+
+    numbers.sort((a, b) => a - b);
 
     return numbers;
 }
