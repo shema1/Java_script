@@ -3,6 +3,8 @@
 const getMessagesForBestStudents = (allStudents, failedStudents) => {
     const passedStudents = allStudents
         .filter(name => failedStudents.indexOf(name) === -1);
+
+    const messages = passedStudents.map(name => 'Good job, ' + name);
     return passedStudents
 }
 
