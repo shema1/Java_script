@@ -6,6 +6,6 @@ function reverseArray(arr) {
     return arr.slice().reverse()
 }
 
-let test = [10, 6, 1, 5, 2];
+// let test = [10, 6, 1, 5, 2];
 
-console.log(reveseArray(test));
+// console.log(reveseArray(test));
