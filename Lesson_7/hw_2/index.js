@@ -1,16 +1,11 @@
-const numbers = [8, 2, 7, 6, 4, 1];
-
-function reverseArray(arr) {
-    let reverseNumbers = [];
+function reveseArray(arr) {
     if (!Array.isArray(arr)) {
         return null
-    } else {
-        for (let i = arr.length - 1; i >= 0; i--) {
-            reverseNumbers.push(arr[i]);
-
-        }
     }
-    return reverseNumbers
+
+    return arr.reverse()
 }
 
-console.log(reverseArray(numbers));
+let test = [10, 6, 1, 5, 2];
+
+console.log(reveseArray(test));
