@@ -3,7 +3,7 @@ function reveseArray(arr) {
         return null
     }
 
-    return arr.reverse()
+    return arr.slice().reverse()
 }
 
 let test = [10, 6, 1, 5, 2];
