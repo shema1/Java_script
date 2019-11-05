@@ -7,5 +7,6 @@ const getSpecialNumbers = numbers => {
         }
 
     }
+    numbers.forEach()
     return secialNumber;
 };
