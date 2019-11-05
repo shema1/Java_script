@@ -1,8 +1,12 @@
-let numbers = [1, 32, 25, 78, 1, 0, 5, 8, 5, 88]
+['Ann', 'Tom', 'Bob', 'Kate']
 
-function swap(arr) {
-    const [start, ...rest] = arr;
-    return [...rest, start];
+const getMessagesForBestStudents = (allStudents, failedStudents) => {
+    const passedStudents = allStudents
+        .filter(name => failedStudents.indexOf(name) === -1);
+    return passedStudents
 }
 
-console.log(swap(numbers));
+const allStudents = ['Ann', 'Tom', 'Bob', 'Kate'];
+const failedStudents = ['Tom', 'Bob'];
+
+console.log(getMessagesForBestStudents(allStudents, failedStudents));
