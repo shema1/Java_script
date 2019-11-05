@@ -1,6 +1,7 @@
 const sortDesc = numbers => {
+    const copy = number.slice();
 
-    numbers.sort((a, b) => b - a);
+    copy.sort((a, b) => b - a);
 
-    return numbers;
+    return copy;
 }
