@@ -1,16 +1,16 @@
-const numbers = [8, 2, 7, 6, 4, 1];
-
 function squareArray(arr) {
-    let squareNumbers = [];
-    if (!Array.isArray(arr)) {
-        return null
+
+    if (Array.isArray(arr)) {
+        const newArr = arr.map(element => element * element);
+
+        return newArr
+
     } else {
-        for (let i = 0; i < arr.length; i++) {
-            squareNumbers.push(arr[i] * arr[i]);
-        }
+        return null
     }
-    return squareNumbers;
 }
 
 
-console.log(squareArray(numbers));
+let test = [10, 6, 1, 5, 2];
+
+console.log(squareArray(test));
