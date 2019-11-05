@@ -1,16 +1,13 @@
-function squareArray(arr) {
+function pickProps(obj, arr) {
+    let testObj = {};
 
-    if (Array.isArray(arr)) {
-        const newArr = arr.map(element => element * element);
+    for (let i = 0; i < arr.length; i++) {
+        for (const key in obj) {
+            if (i == key) {
+                testObj[key] = obj[key]
+            }
+        }
 
-        return newArr
-
-    } else {
-        return null
     }
+    return testObj
 }
-
-
-let test = [10, 6, 1, 5, 2];
-
-console.log(squareArray(test));
