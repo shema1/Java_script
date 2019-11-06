@@ -1,17 +1,12 @@
-const user = {
-    name: 'Tom',
-    age: 17
-}
+const getParsedIntegers = arr => arr
+    .map(i => Number.parseInt(i));
 
 
+const getParsedIntegersV2 = arr => arr
+    .map(i => parseInt(i));
 
-const concatProps = obj => {
-    const arr = [];
-    for (const key in obj) {
-        arr.push(obj[key])
-    }
+const getParsedFloats = arr => arr
+    .map(i => Number.parseFloat(i));
 
-    return arr;
-}
-
-console.log(concatProps(user));
+const getParsedFloatsV2 = arr => arr
+    .map(i => parseFloat(i));
