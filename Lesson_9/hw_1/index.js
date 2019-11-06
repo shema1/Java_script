@@ -9,10 +9,6 @@ const customers = {
     }
 };
 
-// let arr = Object.entries(customers);
-// let test = arr.map(i => i[1].id = i[0]);
-// console.log(arr)
-// console.log(test)
 
 function getCustomersList(obj) {
     let arr = Object.entries(obj);
