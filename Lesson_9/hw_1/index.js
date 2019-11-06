@@ -10,17 +10,24 @@ const customers = {
 };
 
 
-
 function getCustomersList(obj) {
-    let arr = Object.entries(a);
+    let arr = Object.entries(obj);
     let test = [];
 
 
-    arr.map(i => i[1].id = i[0]);
+    for (let i = 0; i < arr.length; i++) {
+        arr.id = test[i];
+    }
     arr.forEach(i => test.push(i[1]));
 
     return test.sort((a, b) => a.age > b.age ? 1 : -1)
 }
 
-
 console.log(getCustomersList(customers));
+
+// let arr = Object.values(customers);
+
+// let arr2 = Object.entries(customers);
+
+// console.log(arr)
+// console.log(arr2)
