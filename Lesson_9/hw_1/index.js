@@ -10,8 +10,9 @@ const customers = {
 };
 
 
+
 function getCustomersList(obj) {
-    let arr = Object.entries(obj);
+    let arr = Object.entries(a);
     let test = [];
 
 
@@ -20,5 +21,6 @@ function getCustomersList(obj) {
 
     return test.sort((a, b) => a.age > b.age ? 1 : -1)
 }
+
 
 console.log(getCustomersList(customers));
