@@ -10,8 +10,9 @@ const customers = {
 };
 
 
-function getCustomersList(obj) {
-    const copy = JSON.parse(JSON.stringify(customers));
+
+const getCustomersList = obj => {
+    const copy = JSON.parse(JSON.stringify(obj));
     let arr = Object.entries(copy);
     let test = [];
 
