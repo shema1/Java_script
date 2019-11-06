@@ -1,14 +1,11 @@
-['Ann', 'Tom', 'Bob', 'Kate']
+const getMaxAbsoluteNumber = arr => {
+    if (!Array.isArray(arr) || arr.length == 0) {
+        return null;
+    }
 
-const getMessagesForBestStudents = (allStudents, failedStudents) => {
-    const passedStudents = allStudents
-        .filter(name => failedStudents.indexOf(name) === -1);
+    const absoluteValues = arr.map(num => Math.abs(num));
 
-    const messages = passedStudents.map(name => 'Good job, ' + name);
-    return messages
-}
+    const max = Math.max(...absoluteValues);
 
-const allStudents = ['Ann', 'Tom', 'Bob', 'Kate'];
-const failedStudents = ['Tom', 'Bob'];
-
-console.log(getMessagesForBestStudents(allStudents, failedStudents));
+    return max;
+};
