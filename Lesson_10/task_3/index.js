@@ -1,7 +1,6 @@
-const flatArray = arr => {
-    const flatArray = arr
-        .reduce((acc, elem) => {
-            return acc.concat(elem);
-        }, [])
-    return flatArray;
-}
+const multiRound = num => [
+    Math.floor(num * 100) / 100,
+    Math.round(num * 100) / 100,
+    Math.ceil(num * 100) / 100,
+    Math.trunc(num * 100) / 100, +num.toFixed(2)
+];
