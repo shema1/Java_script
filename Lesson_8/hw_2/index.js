@@ -1,11 +1,9 @@
-function reverseArray(arr) {
-    if (!Array.isArray(arr)) {
-        return null
-    }
-
-    return arr.slice().reverse()
+const getAdults = obj => {
+    let testObj = {}:
+        for (const key in obj) {
+            if (obj[key >= 18]) {
+                testObj[key] = obj[key]
+            }
+        }
+    return testObj;
 }
-
-// let test = [10, 6, 1, 5, 2];
-
-// console.log(reveseArray(test));
