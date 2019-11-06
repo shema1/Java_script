@@ -10,3 +10,7 @@ const getParsedFloats = arr => arr
 
 const getParsedFloatsV2 = arr => arr
     .map(i => parseFloat(i));
+
+const arr = [14, 2.28, , null, , 'text', '1734text', NaN];
+
+console.log(arr);
