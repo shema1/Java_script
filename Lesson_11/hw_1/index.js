@@ -1,4 +1,5 @@
 const splitString = (text, len) => {
+
     const strArr = [];
     let startPosition = 0;
 
@@ -15,7 +16,7 @@ const splitString = (text, len) => {
 
         let chunk = text.substr(startPosition, len);
         if (chunk.length === 0) {
-            break
+            break;
         }
 
         startPosition += len;
@@ -23,7 +24,7 @@ const splitString = (text, len) => {
         if (chunk.length < len) {
             strArr.push(chunk + '.'.repeat(len - chunk.length))
         }
-        strArr.push(strArr);
+        strArr.push(chunk);
 
     }
     return strArr;
