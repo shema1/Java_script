@@ -10,7 +10,7 @@ function getRandomNumbers(len, from, to) {
     let arr = [];
     arr.length = len
 
-    return arr.fill().map(i => Math.floor(from + Math.random() * (to + 1 - from)));
+    return arr.fill().map(i => Math.floor(Math.random() * (from - to) + to));
 }
 
 console.log(getRandomNumbers(5, 5, 99));
