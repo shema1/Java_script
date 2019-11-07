@@ -21,11 +21,11 @@ const splitString = (text, len) => {
 
         if (chunk.length < len) {
             strArr.push(chunk + '.'.repeat(len - chunk.length))
-        } else {
-            strArr.push
         }
+        strArr.push(strArr);
+
     }
-    return strArr.join('\n');
+    return strArr;
 };
 
 
