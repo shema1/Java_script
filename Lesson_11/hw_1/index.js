@@ -1,9 +1,11 @@
 const splitString = (text, len) => {
     const strArr = [];
     let startPosition = 0;
+
     if (typeof text !== "string") {
         return null;
     }
+
     while (true) {
 
         let chunk = text.substr(startPosition, len);
@@ -13,6 +15,7 @@ const splitString = (text, len) => {
 
         strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
         startPosition += len;
+
         if (chunk.length < len) {
             strArr.push(chunk + '.'.repeat(len - chunk.length))
         } else {
@@ -24,4 +27,4 @@ const splitString = (text, len) => {
 
 
 
-console.log(splitString('asakuierneydebhcnsagduyegfrbsjuaiquieryrtbsncfdgcfgdasdsavregbrbvsds', 3));
+// console.log(splitString('asakuierneydebhcnsagduyegfrbsjuaiquieryrtbsncfdgcfgdasdsavregbrbvsds', 3));

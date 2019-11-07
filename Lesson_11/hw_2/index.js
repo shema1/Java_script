@@ -1,14 +1,8 @@
-const getRandomNumbers = (len, from, to) => {
+const countOccurrences = (str, serch) => {
 
-    const isWrongRange = to < from;
-    const noNumbersBetween = (to - from < 1) && Math.ceil(to) === Math.ceil(from);
-
-
-    if (isWrongRange || noNumbersBetween) {
+    if (serch === '') {
         return null;
     }
-    let arr = [];
-    arr.length = len;
 
-    return arr.fill().map(i => Math.trunc(Math.random() * (to - from) + from));
+    return str.match(new RegExp(serch, 'g')).length;
 }
