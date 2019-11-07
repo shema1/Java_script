@@ -1,10 +1,11 @@
-function getRandomNumbers(len, from, max) {
+function getRandomNumbers(len, from, to) {
 
-    const isWrongRange = from < to;
-    const noNumbersBetween = (from - to < 1) && Math.ceil(from) === Math.ceil(to);​
-    if (isWrongRange || noNumbersBetween) {
-        return null;
-    }
+    // const isWrongRange = from < to;
+    // const noNumbersBetween = (from - to < 1) && Math.ceil(from) === Math.ceil(to);​
+
+    // if (isWrongRange || noNumbersBetween) {
+    //     return null;
+    // }
     let arr = [];
     arr.length = len
 
