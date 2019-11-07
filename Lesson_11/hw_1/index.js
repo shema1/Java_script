@@ -2,15 +2,13 @@ const splitString = (text, len) => {
     const strArr = [];
     let startPosition = 0;
 
-    if (len === undefined) {
-        len = 10;
-    }
-
     if (typeof text !== "string") {
         return null;
     }
 
-
+    if (len === undefined) {
+        len = 10;
+    }
 
 
     while (true) {
@@ -20,7 +18,6 @@ const splitString = (text, len) => {
             break
         }
 
-        strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
         startPosition += len;
 
         if (chunk.length < len) {
@@ -29,7 +26,7 @@ const splitString = (text, len) => {
         strArr.push(strArr);
 
     }
-    return strArr.join('\n');;
+    return strArr;
 };
 
 
