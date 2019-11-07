@@ -1,8 +1,9 @@
 const sortContacts = contacts => {
-    const result = contacts
-        .sort((a, b) => {
-            return a.name.localeCompare(b.name)
-        });
+    if (!Array.isArray(contacts))
+        const result = contacts
+            .sort((a, b) => {
+                return b.name.localeCompare(a.name)
+            });
 
     return result;
 }
