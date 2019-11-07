@@ -4,5 +4,5 @@ function getTotalPrice(arr) {
         return acc += b
     });
 
-    return '$' + test.toFixed(2);
+    return '$' + Math.floor(sum * 100) / 100;
 }
