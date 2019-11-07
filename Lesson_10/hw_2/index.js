@@ -10,3 +10,5 @@ function getRandomNumbers(len, from, max) {
 
     return arr.fill().map(i => Math.floor(from + Math.random() * (to + 1 - from)));
 }
+
+console.log(getRandomNumbers(5, 5, 99));
