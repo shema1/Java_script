@@ -9,5 +9,3 @@ const getRandomNumbers = (length, min, max) => {
     arr.length = length
     return arr.fill().map(i => Math.floor(min + Math.random() * (max + 1 - min)))
 }
-
-console.log(getRandomNumbers(6, 2, 52));
