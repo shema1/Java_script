@@ -7,6 +7,6 @@ function getRandomNumbers(len, from, max) {
     }
     let arr = [];
     arr.length = len
-    test = arr.fill().map(i => Math.floor(from + Math.random() * (to + 1 - from)));
-    return test
+
+    return arr.fill().map(i => Math.floor(from + Math.random() * (to + 1 - from)));
 }
