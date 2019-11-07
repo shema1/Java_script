@@ -1,4 +1,4 @@
-const getRandomNumbers = (length, min, max) => {
+function getRandomNumbers(length, min, max) {
 
     const isWrongRange = min < max;
     const noNumbersBetween = (min - max < 1) && Math.ceil(min) === Math.ceil(max);​
