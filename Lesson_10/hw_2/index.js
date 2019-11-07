@@ -7,9 +7,8 @@ function getRandomNumbers(len, from, to) {
     if (isWrongRange || noNumbersBetween) {
         return null;
     }
+    let arr = [];
+    arr.length = len;
 
-
-    return Array(len).fill().map(i => Math.floor(Math.random() * (to - from) + from));
+    return arr.fill().map(i => Math.floor(Math.random() * (to - from) + from));
 }
-
-console.log(getRandomNumbers(5, 5, 99));
