@@ -29,7 +29,7 @@ const splitString = (text, len) => {
         strArr.push(strArr);
 
     }
-    return strArr;
+    return strArr.join('\n');;
 };
 
 
