@@ -8,7 +8,7 @@ function getRandomNumbers(len, from, to) {
         return null;
     }
     let arr = [];
-    arr.length = len
+    arr.length = len - 1
 
     return arr.fill().map(i => Math.floor(Math.random() * (to - from) + from));
 }
