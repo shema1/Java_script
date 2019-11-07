@@ -23,8 +23,10 @@ const splitString = (text, len) => {
 
         if (chunk.length < len) {
             strArr.push(chunk + '.'.repeat(len - chunk.length))
+        } else {
+            strArr.push(chunk);
         }
-        strArr.push(chunk);
+
 
     }
     return strArr;
