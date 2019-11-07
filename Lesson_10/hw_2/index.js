@@ -1,6 +1,6 @@
 function getRandomNumbers(len, from, to) {
 
-    const isWrongRange = from < to;
+    const isWrongRange = to < from;
     const noNumbersBetween = (to - from < 1) && Math.ceil(to) === Math.ceil(from);
 
 
