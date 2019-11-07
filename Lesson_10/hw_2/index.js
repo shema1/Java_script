@@ -7,5 +7,6 @@ const getRandomNumbers = (length, min, max) => {
     }
     let arr = [];
     arr.length = length
-    return arr.fill().map(i => Math.floor(min + Math.random() * (max + 1 - min)))
+    test = arr.fill().map(i => Math.floor(min + Math.random() * (max + 1 - min)));
+    return test
 }
