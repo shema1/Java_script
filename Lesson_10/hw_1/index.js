@@ -1,13 +1,8 @@
-function pickProps(obj, arr) {
-    let testObj = {};
+function getTotalPrice(arr) {
+    let test = 0;
+    test = arr.reduce((acc, b) => {
+        return acc += b
+    });
 
-    for (let i of arr) {
-        for (const key in obj) {
-            if (i == key) {
-                testObj[key] = obj[key]
-            }
-        }
-
-    }
-    return testObj
+    return '$' + test.toFixed(2);
 }

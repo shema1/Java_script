@@ -1,6 +1,9 @@
+const test = [5.5555, 9.3254, 87, 4.4, 5, 5];
 const getPeople = obj => {
 
-    const arr = Object.values(obj).map(i => i.map(i => i.name))
+    const arr = reduce(a, numm);
 
-    return arr.concat.apply([], arr)
+    return arr;
 }
+
+console.log(getPeople(test))
