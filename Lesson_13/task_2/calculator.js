@@ -6,4 +6,4 @@ export const getOddNumbers = arr =>
     arr.filter(num => { num % 2 === 1 });
 
 
-export const sum = (a, b) => a + b;
+export default (a, b) => a + b;
