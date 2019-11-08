@@ -1,19 +1,19 @@
 const calc = expression => {
-    const a = expression.split(' ');
+    const [a, operator, b] = expression.split(' ');
     let result;
 
-    switch (a[1]) {
+    switch (operator) {
         case '+':
-            result = Number(a[0]) + Number(a[2]);
+            result = Number(a) + Number(b);
             break;
         case '-':
-            result = a[0] + a[2];
+            result = a - b;
             break;
         case '*':
-            result = a[0] + a[2];
+            result = a * b;
             break;
         case '/':
-            result = a[0] + a[2];
+            result = a / b;
             break;
     }
 
