@@ -1,7 +1,7 @@
 const cleanTransactionsList = arr => {
 
     // res = arr.filter(i => !isNaN(i)).map(i => '$' + Number(i).toFixed(2));
-    return arr.filter(i => !isNaN(i)).map(i => '$' + Number(i).toFixed(2));
+    return arr.filter(i => !isNaN(i) && typeof + i === 'number').map(i => '$' + Number(i).toFixed(2));
 
 }
 
