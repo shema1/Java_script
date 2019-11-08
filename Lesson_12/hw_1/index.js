@@ -1,37 +1,12 @@
-const splitString = (text, len) => {
+const reverseString = str => {
+    let result = str.split('').reverse().join('');
 
-    const strArr = [];
-    let startPosition = 0;
-
-    if (typeof text !== "string") {
-        return null;
+    if (typeof str !== 'string') {
+        return null
     }
-
-    if (len === undefined) {
-        len = 10;
-    }
+    return result;
 
 
-    while (true) {
+}
 
-        let chunk = text.substr(startPosition, len);
-        if (chunk.length === 0) {
-            break;
-        }
-
-        startPosition += len;
-
-        if (chunk.length < len) {
-            strArr.push(chunk + '.'.repeat(len - chunk.length))
-        } else {
-            strArr.push(chunk);
-        }
-
-
-    }
-    return strArr;
-};
-
-
-
-console.log(splitString('asakuierneydebhcnsagduyegfrbsjuaiquieryrtbsncfdgcfgdasdsavregbrbvsds', 3));
+console.log(reverseString('hello'));
