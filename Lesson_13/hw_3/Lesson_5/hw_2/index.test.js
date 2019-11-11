@@ -1,7 +1,7 @@
 import { getPrimes } from './index.js';
 
-it('input parametrs must be bigger 0', () => {
-    const result = getSum(20, 0, 0, 0);
+it('input must be bigger 0', () => {
+    const result = getSum(20);
     expect(result).toEqual(null);
 });
 
@@ -11,6 +11,6 @@ it('Only numbers', () => {
 });
 
 it('Only integer number', () => {
-    const result = getSum(27.1445, 5, 30.2, 6);
+    const result = getSum(20.25454);
     expect(result).toEqual(null);
 });
