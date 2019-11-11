@@ -5,11 +5,11 @@ function add(num) {
 }
 
 function decrease(num) {
-    calc -= start;
+    calc -= num;
 }
 
 function reset() {
-    start = 0;
+    calc = 0;
 }
 
 function getMemo() {
