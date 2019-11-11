@@ -1,12 +1,19 @@
-const reverseString = str => {
-    if (typeof str !== 'string') {
-        return null
-    }
+let calc = 0;
 
-    let result = str.split('').reverse().join('');
-    return result;
-
-
+function add(num) {
+    calc += num;
 }
 
-console.log(reverseString('hello'));
+function decrease(num) {
+    calc -= start;
+}
+
+function reset() {
+    start = 0;
+}
+
+function getMemo() {
+    return calc;
+}
+
+export { add, decrease, reset, getMemo }
