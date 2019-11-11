@@ -32,4 +32,13 @@ function createLogger() {
         },
     }
 }
-export { createLogger };
+
+const test1 = createLogger();
+
+test1.warn('test1');
+test1.warn('test2');
+test1.log('test1');
+console.log(test1.getRecords())
+
+
+// export { createLogger };
