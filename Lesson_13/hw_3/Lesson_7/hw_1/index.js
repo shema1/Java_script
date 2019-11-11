@@ -1,4 +1,4 @@
-function squareArray(arr) {
+export function squareArray(arr) {
 
     if (Array.isArray(arr)) {
         const newArr = arr.map(element => element * element);
