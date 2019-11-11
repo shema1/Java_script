@@ -1,21 +1,31 @@
-function createCalculator() {
+const createCalculator = () => {
     let calc = 0;
 
-    function add(num) {
-        calc += num;
-    }
+    return {
+        add: function(num) {
+            calc += num;
+        },
 
-    function decrease(num) {
-        calc -= num;
-    }
+        decrease: function(num) {
+            calc -= num;
+        },
 
-    function reset() {
-        calc = 0;
-    }
+        reset: function() {
+            calc = 0;
+        },
 
-    function getMemo() {
-        return calc;
+        getMemo: function() {
+            return calc;
+        }
     }
 }
+
+// const calculator1 = createCalculator();
+// const calculator2 = createCalculator();
+// calculator1.add(10)
+// calculator2.add(15)
+// console.log(calculator1.getMemo());
+// console.log(calculator2.getMemo());
+// console.log(calculator1.getMemo());
 
 export { createCalculator }
