@@ -11,7 +11,7 @@ const customers = {
 
 
 
-const getCustomersList = obj => {
+export const getCustomersList = obj => {
     const copy = JSON.parse(JSON.stringify(obj));
     let arr = Object.entries(copy);
     let test = [];

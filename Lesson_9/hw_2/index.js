@@ -1,9 +1,19 @@
-const test = [5.5555, 9.3254, 87, 4.4, 5, 5];
-const getPeople = obj => {
+export const getPeople = obj => Object.values(obj)
+    .reduce((acc, elem) => acc.concat(elem), [])
+    .map(elem => elem.name);
 
-    const arr = reduce(a, numm);
 
-    return arr;
-}
-
-console.log(getPeople(test))
+const rooms = {
+    room1: [
+        { name: 'room1 name1' },
+        { name: 'room1 name2' },
+    ],
+    room2: [
+        { name: 'room2 name1' },
+        { name: 'room2 name2' },
+    ],
+    room3: [
+        { name: 'room3 name1' },
+        { name: 'room3 name2' },
+    ],
+};

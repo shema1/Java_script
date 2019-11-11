@@ -1,4 +1,4 @@
-function pickProps(obj, arr) {
+export function pickProps(obj, arr) {
     let testObj = {};
 
     for (let i of arr) {
