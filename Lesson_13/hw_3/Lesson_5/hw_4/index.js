@@ -1,4 +1,4 @@
-function compareSums(a, b, c, d) {
+export function compareSums(a, b, c, d) {
 
     if (sum(a, b) > sum(c, d)) {
         return true;
