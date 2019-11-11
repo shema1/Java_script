@@ -22,5 +22,5 @@ it('message /', () => {
 
 it('input parameteris not string', () => {
     const result = calc(47);
-    expect(result).toEqual();
+    expect(result).toEqual(null);
 });
