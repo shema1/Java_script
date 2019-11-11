@@ -1,21 +1,24 @@
-const calc = expression => {
-    const [a, operator, b] = expression.split(' ');
-    let result;
+function createMessenger() {
+    let message = 'Just learn it!';
+    let sender = 'Gromcode';
 
-    switch (operator) {
-        case '+':
-            result = Number(a) + Number(b);
-            break;
-        case '-':
-            result = a - b;
-            break;
-        case '*':
-            result = a * b;
-            break;
-        case '/':
-            result = a / b;
-            break;
+    function sendMessage(name) {
+        console.log(`${name}, ${message} Your ${sender}`);
     }
 
-    return expression + ' = ' + result;
+    function setMessage(text) {
+        message = text;
+    }
+
+    function setSender(text) {
+        sender = text;
+    }
+
+    return {
+        sendMessage,
+        setMessage,
+        setSender,
+    }
 }
+
+export default createMessenger;
