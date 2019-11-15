@@ -1,4 +1,4 @@
-var foo = 1;
+export var foo = 1;
 
 function bar() {
     if (!foo) {
@@ -9,5 +9,3 @@ function bar() {
 }
 
 var foo = bar();
-
-export { foo };
