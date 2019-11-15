@@ -1,9 +1,11 @@
-function makeCounter() {
-    let counter = 0;
+var foo = 1;
 
-    return function() {
-        return counter++;
+function bar() {
+    if (!foo) {
+        let foo = 10;
     }
+
+    return foo;
 }
 
-export { makeCounter };
+var foo = bar();
