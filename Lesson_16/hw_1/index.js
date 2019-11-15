@@ -1,31 +1,11 @@
-const createCalculator = () => {
-    let calc = 0;
+var a = 17;
 
-    return {
-        add: function(num) {
-            calc += num;
-        },
+if (a) {
 
-        decrease: function(num) {
-            calc -= num;
-        },
+    let a = 1;
 
-        reset: function() {
-            calc = 0;
-        },
+    console.log(a);
 
-        getMemo: function() {
-            return calc;
-        }
-    }
 }
 
-// const calculator1 = createCalculator();
-// const calculator2 = createCalculator();
-// calculator1.add(10)
-// calculator2.add(15)
-// console.log(calculator1.getMemo());
-// console.log(calculator2.getMemo());
-// console.log(calculator1.getMemo());
-
-export { createCalculator }
+console.log(a);
