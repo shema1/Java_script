@@ -1,11 +1,10 @@
-export var foo = 1;
+var arr = [];
 
-function bar() {
-    if (!foo) {
-        let foo = 10;
+for (let i = 0; i < 10; i++) {
+    arr[i] = function() {
+        return i;
     }
-
-    return foo;
 }
 
-var foo = bar();
+// console.log(arr[2]())
+export { arr };

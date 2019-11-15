@@ -1,11 +1,19 @@
-var a = 17;
+const createArrayOfFunctions = (num) => {
+    let arr = [];
+    if (num == undefined) {
+        return arr
+    } else if (typeof num == 'number') {
 
-if (a) {
-
-    let a = 1;
-
-    console.log(a);
-
+        for (let i = 0; i < num; i++) {
+            arr[i] = function() {
+                return i;
+            }
+        }
+        return arr
+    } else {
+        console.log('only number')
+        return null
+    }
 }
 
-console.log(a);
+export { createArrayOfFunctions }
