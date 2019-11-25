@@ -1,7 +1,7 @@
 const event = {
     message: 'Welcome to the party!',
     guests: [
-        { name: 'Tom', age: 21, email: 'a@server.com' },
+        { name: 'John', age: 21, email: 'a@server.com' },
         { name: 'Bob', age: 15, email: 'b@server.com' }
     ],
     getInvitations() {
