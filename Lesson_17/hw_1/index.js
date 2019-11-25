@@ -2,8 +2,8 @@ const user = {
     firstName: '',
     lastName: '',
     getFullName() {
-        console.log(this.firstName + ' ' + this.lastName)
-        return this.firstName + ' ' + this.lastName;
+        console.log(`${this.firstName} ${this.lastName}`)
+        return `${this.firstName} ${this.lastName}`
     },
     setFullName(fullName) {
         let array = fullName.split(' ');
