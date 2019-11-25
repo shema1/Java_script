@@ -1,10 +1,15 @@
-var arr = [];
-
-for (let i = 0; i < 10; i++) {
-    arr[i] = function() {
-        return i;
-    }
+const callbackPrompt = {
+    message: 'Tell me your number',
+    showPrompt() {
+        const phoneNumber = prompt(this.message);
+        console.log(phoneNumber);
+    },
+    showDeferredPrompt(ms) {
+        console.log(this)
+        setTimeout(this.showPrompt.bind(this), ms);
+    },
 }
 
-// console.log(arr[2]())
-export { arr };
+callbackPrompt.showDeferredPrompt(1000);
+
+export { callbackPrompt };
