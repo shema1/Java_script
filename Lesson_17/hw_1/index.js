@@ -15,4 +15,4 @@ const user = {
 user.getFullName();
 user.setFullName('Tom Bom')
 user.getFullName();
-// export { user };
+export { user };
