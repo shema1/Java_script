@@ -1,17 +1,16 @@
-const createArrayOfFunctions = (num) => {
-
-    if (num == undefined) return []
-
-    if (typeof num !== 'number') return null
-
-
-    for (let i = 0; i < num; i++) {
-        let arr = [];
-        arr[i] = function() {
-            return i;
-        }
+const user = {
+    firstName: 'Jhon',
+    lastName: 'Doe',
+    getFullName() {
+        console.log(this.firstName + ' ' + this.lastName)
+    },
+    setFullName(name, ln) {
+        this.firstName = name;
+        this.lastName = ln;
     }
-    return arr
 }
 
-export { createArrayOfFunctions }
+user.getFullName();
+user.setFullName('Tom', 'Bom')
+user.getFullName();
+export { user };
