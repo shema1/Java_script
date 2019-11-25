@@ -8,3 +8,4 @@ const user = {
 }
 
 user.getFullName();
+export { user };
