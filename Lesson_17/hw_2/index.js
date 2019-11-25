@@ -12,13 +12,15 @@ let timer = {
 
     },
     stopTimer() {
-        clearInterval(step)
+        clearInterval(this.step)
     },
     getTime() {
-        if (secondsPassed < 10) {
+        if (this.secondsPassed < 10) {
             console.log(`${this.minsPassed}:0${this.secondsPassed}`)
         }
-        console.log(`${this.minsPassed}:${this.secondsPassed}`)
+        if (this.secondsPassed > 10) {
+            console.log(`${this.minsPassed}:${this.secondsPassed}`)
+        }
     },
     resetTimer() {
         this.secondsPassed = 0;
@@ -26,4 +28,8 @@ let timer = {
     }
 }
 timer.startTimer();
-export { timer }
+timer.getTime();
+timer.stopTimer();
+timer.startTimer();
+
+// export { timer }
