@@ -3,6 +3,7 @@ const user = {
     lastName: 'Doe',
     getFullName() {
         console.log(this.firstName + ' ' + this.lastName)
+        return this.firstName + ' ' + this.lastName;
     },
     setFullName(name, ln) {
         this.firstName = name;
@@ -10,7 +11,7 @@ const user = {
     }
 }
 
-user.getFullName();
-user.setFullName('Tom', 'Bom')
-user.getFullName();
+// user.getFullName();
+// user.setFullName('Tom', 'Bom')
+// user.getFullName();
 export { user };
