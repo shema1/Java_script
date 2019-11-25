@@ -15,4 +15,4 @@ const event = {
 }
 
 console.log(event.getInvitations());
-export { event };
+// export { event };

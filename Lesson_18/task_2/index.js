@@ -1,15 +1,12 @@
-const callbackPrompt = {
-    message: 'Tell me your number',
-    showPrompt() {
-        const phoneNumber = prompt(this.message);
-        console.log(phoneNumber);
+const wallet = {
+    transactions: [1, 2, 8, 26, 99],
+    getMax() {
+        return Math.max(...this.transactions);
     },
-    showDeferredPrompt(ms) {
-        console.log(this)
-        setTimeout(this.showPrompt.bind(this), ms);
-    },
-}
-
-callbackPrompt.showDeferredPrompt(1000);
-
-export { callbackPrompt };
+    getMin() {
+        return Math.min(...this.transactions);
+    }
+};
+console.log(wallet.getMax());
+console.log(wallet.getMin())
+export { wallet };
