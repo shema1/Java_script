@@ -1,4 +1,4 @@
-const bind = (func, context) => {
+function bind(func, context) {
     let args = [].slice.call(arguments, 2)
     return function() {
         let test = [].slice.call(arguments)
