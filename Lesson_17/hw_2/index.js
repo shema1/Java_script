@@ -1,8 +1,9 @@
 let timer = {
         secondsPassed: 0,
         minsPassed: 0,
+        process: 0,
         startTimer() {
-            let step = setInterval(() => {
+            this.process = setInterval(() => {
                 this.secondsPassed += 5
                 if (this.secondsPassed === 60) {
                     this.secondsPassed = 0;
@@ -12,7 +13,7 @@ let timer = {
 
         },
         stopTimer() {
-            clearInterval(this.startTimer)
+            clearInterval(this.process)
         },
         getTime() {
             if (this.secondsPassed < 10) {
