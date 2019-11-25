@@ -16,10 +16,10 @@ let timer = {
         },
         getTime() {
             if (this.secondsPassed < 10) {
-                console.log(`${this.minsPassed}:0${this.secondsPassed}`)
+                return (`${this.minsPassed}:0${this.secondsPassed}`)
             }
             if (this.secondsPassed > 10) {
-                console.log(`${this.minsPassed}:${this.secondsPassed}`)
+                return (`${this.minsPassed}:${this.secondsPassed}`)
             }
         },
         resetTimer() {
