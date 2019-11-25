@@ -26,3 +26,4 @@ let timer = {
     }
 }
 timer.startTimer();
+export { timer }
