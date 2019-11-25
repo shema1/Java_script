@@ -1,6 +1,6 @@
 const user = {
-    firstName: 'Jhon',
-    lastName: 'Doe',
+    firstName: '',
+    lastName: '',
     getFullName() {
         console.log(this.firstName + ' ' + this.lastName)
         return this.firstName + ' ' + this.lastName;
@@ -13,6 +13,6 @@ const user = {
 }
 
 user.getFullName();
-user.setFullName('Tom Bom')
-user.getFullName();
+// user.setFullName('Tom Bom')
+// user.getFullName();
 export { user };
