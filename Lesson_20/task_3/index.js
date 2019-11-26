@@ -1,8 +1,8 @@
 class Wallet {
-    _count = count;
+    _count = 0;
 
     getBalance() {
-        return `${this._count}`
+        return this._count
     }
 
     deposit(value) {
