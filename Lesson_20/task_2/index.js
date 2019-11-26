@@ -1,26 +1,33 @@
-const ship = {
-    name: 'Aurora',
-    hasWeels: false,
-    startMachine() {
-        console.log(`${this.name} lifting anchor up`);
-        ship.move()
-    },
-    stopMachine() {
-        console.log(`${this.name} lifting anchor down`);
-        ship.stop()
-    },
+class Vehicle {
+    constructor(name, numberOfWheels) {
+        this.name = name;
+        this.numberOfWheels = numberOfWheels;
+    }
+
+    move() {
+        console.log(`${this.name} is moving`)
+    }
+
+    stop() {
+        console.log(`${this.name} stopped`)
+    }
 
 };
 
-function getOwnProps(obj) {
-    let arr = []
-    for (let prop in obj) {
-        if (obj.hasOwnProperty(prop) && typeof obj[prop] != 'function') {
-            arr.push(prop)
-        }
+class Ship extends Vehicle {
+    constructor(name, numberOfWheels, maxSpeed) {
+        super(name, numberOfWheels);
+        this.maxSpeed = maxSpeed;
     }
-    return arr;
+    move() {
+        console.log(`${this.name} lifting anchor up`);
+        super.move();
+    }
+
+    stop() {
+        console.log(`${this.name} lifting anchor down`);
+        super.stop();
+    }
 }
 
-console.log(getOwnProps(ship))
-export { getOwnProps }
+export { Vehicle, Ship };
