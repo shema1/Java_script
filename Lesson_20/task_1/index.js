@@ -7,7 +7,7 @@ class User {
     static createEmpty() {
         return {
             name: '',
-            age: ''
+            age: null
         }
     }
     sayHi() {
