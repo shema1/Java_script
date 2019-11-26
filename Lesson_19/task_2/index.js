@@ -15,12 +15,13 @@ function getOwnProps(obj) {
     let arr = []
 
     for (let prop in obj) {
-        console.log(typeof(obj[prop]))
-            // if (obj.hasOwnProperty(prop) && typeof) {
-            //     arr.push(prop)
-            // }
+        if (obj.hasOwnProperty(prop) && typeof obj[prop] != 'function') {
+            arr.push(prop)
+        }
     }
     return arr;
 }
 
 console.log(getOwnProps(ship))
+
+export { getOwnProps }
