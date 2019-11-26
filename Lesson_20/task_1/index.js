@@ -1,28 +1,26 @@
-  const vehicle = {
-      name: 'Argo',
-      move() {
-          console.log(`${this.name} is moving`);
-      },
-      stop() {
-          console.log(`${this.name} stopped`);
-      },
-  };
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    sayHi() {
+        console.log(`Hi, I am ${this.name}`)
+    }
 
-  const ship = {
-      name: 'Aurora',
-      hasWeels: false,
-      startMachine() {
-          console.log(`${this.name} lifting anchor up`);
-          ship.move()
-      },
-      stopMachine() {
-          console.log(`${this.name} lifting anchor down`);
-          ship.stop()
-      },
-  };
+    requestNewPhoto() {
+        console.log(`New photo request was sent for ${this.name}`);
+    }
 
-  Object.setPrototypeOf(ship, vehicle);
+    setAge(value) {
+        if (value < 0) {
+            return false
+        }
+        this.age = value
+        if (value >= 25) {
+            this.requestNewPhoto()
+        }
+        return value;
+    }
+}
 
-  ship.move()
-
-  export { vehicle, ship }
+export { User };
