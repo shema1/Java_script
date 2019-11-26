@@ -30,3 +30,5 @@ console.log(spyTest.calls)
 // const spyMethod = spy(user.sayHi);
 // spyMethod.apply({ name: 'Tom' }); // 'Tom'
 // console.log(spyMethod.calls) // [ [] ]
+
+export { spy }
