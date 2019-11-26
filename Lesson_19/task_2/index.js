@@ -1,15 +1,26 @@
-const callbackPrompt = {
-    message: 'Tell me your number',
-    showPrompt() {
-        const phoneNumber = prompt(this.message);
-        console.log(phoneNumber);
+const ship = {
+    name: 'Aurora',
+    hasWeels: false,
+    startMachine() {
+        console.log(`${this.name} lifting anchor up`);
+        ship.move()
     },
-    showDeferredPrompt(ms) {
-        console.log(this)
-        setTimeout(this.showPrompt.bind(this), ms);
+    stopMachine() {
+        console.log(`${this.name} lifting anchor down`);
+        ship.stop()
     },
+};
+
+function getOwnProps(obj) {
+    let arr = []
+
+    for (let prop in obj) {
+        console.log(typeof(obj[prop]))
+            // if (obj.hasOwnProperty(prop) && typeof) {
+            //     arr.push(prop)
+            // }
+    }
+    return arr;
 }
 
-callbackPrompt.showDeferredPrompt(1000);
-
-export { callbackPrompt };
+console.log(getOwnProps(ship))
