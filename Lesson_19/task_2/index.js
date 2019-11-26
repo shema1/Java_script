@@ -9,11 +9,11 @@ const ship = {
         console.log(`${this.name} lifting anchor down`);
         ship.stop()
     },
+
 };
 
 function getOwnProps(obj) {
     let arr = []
-
     for (let prop in obj) {
         if (obj.hasOwnProperty(prop) && typeof obj[prop] != 'function') {
             arr.push(prop)
@@ -23,5 +23,4 @@ function getOwnProps(obj) {
 }
 
 console.log(getOwnProps(ship))
-
 export { getOwnProps }
