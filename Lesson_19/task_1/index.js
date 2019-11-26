@@ -15,7 +15,7 @@
           console.log(`${this.name} lifting anchor up`);
           ship.move()
       },
-      liftAnchorDown() {
+      stopMachine() {
           console.log(`${this.name} lifting anchor down`);
           ship.stop()
       },
