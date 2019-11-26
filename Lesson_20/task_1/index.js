@@ -3,6 +3,13 @@ class User {
         this.name = name;
         this.age = age;
     }
+
+    static createEmpty() {
+        return {
+            name: '',
+            age: ''
+        }
+    }
     sayHi() {
         console.log(`Hi, I am ${this.name}`)
     }
