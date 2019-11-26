@@ -14,5 +14,5 @@ const event = {
     }
 }
 
-console.log(event.getInvitations());
-// export { event };
+// console.log(event.getInvitations());
+export { event };
