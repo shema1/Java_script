@@ -1,7 +1,6 @@
 class Wallet {
-    constructor(count) {
-        this._count = count;
-    }
+    _count = count;
+
     getBalance() {
         return `${this._count}`
     }
