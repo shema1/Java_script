@@ -1,5 +1,4 @@
 class User {
-
     constructor(id, name, sessionld) {
         this._id = id;
         this._name = name;
@@ -19,12 +18,8 @@ class UserRepository {
         return this._users.map(i => i._id)
     };
     getUserNameById(id) {
-        let userName = this._users.filter(i => i._id == id)
-        if (userName.length == 0) {
-            console.log('not found')
-            return
-        }
-        return userName
+        let userName = this._users.find(i => i._id === id)
+        return userName != 'undefined' ? userName._name : [];
     };
 }
 
@@ -33,10 +28,10 @@ export { User, UserRepository }
 // const users = [
 //     new User('1', 'Tom', '11'),
 //     new User('2', 'Bob', '12'),
-//     new User('3', 'John', '13'),
+//     new User('3', 'John', '13')
 // ];
 
 // let test = new UserRepository(users);
 // test.getUserNames()
 // test.getUserIds()
-// test.getUserNameById(11)
+// test.getUserNameById('1111')
