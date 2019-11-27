@@ -24,11 +24,9 @@ class Order {
     }
 
     isValidType() {
-        if (this.info === 'Buy' || this.info === 'Sell') {
-            console.log('true')
+        if (this.type == 'Buy' || this.type == 'Sell') {
             return true
         }
-        console.log('false')
         return false
     }
 }
