@@ -49,6 +49,8 @@ body {
 }
 
 .list__item {
+    display: flex;
+    align-items: center;
     height: 40px;
     background-color: wheat;
     margin-top: 8px;
