@@ -28,6 +28,7 @@ class UserRepository {
     };
 }
 
+export { User, UserRepository }
 
 // const users = [
 //     new User('1', 'Tom', '11'),
