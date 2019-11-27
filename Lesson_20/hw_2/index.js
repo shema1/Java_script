@@ -1,36 +1,41 @@
-let timer = {
-        secondsPassed: 0,
-        minsPassed: 0,
-        process: 0,
-        startTimer() {
-            this.process = setInterval(() => {
-                this.secondsPassed += 5
-                if (this.secondsPassed === 60) {
-                    this.secondsPassed = 0;
-                    this.minsPassed++
-                }
-            }, 5000);
+class User {
 
-        },
-        stopTimer() {
-            clearInterval(this.process)
-        },
-        getTime() {
-            if (this.secondsPassed < 10) {
-                return (`${this.minsPassed}:0${this.secondsPassed}`)
-            }
-            if (this.secondsPassed > 10) {
-                return (`${this.minsPassed}:${this.secondsPassed}`)
-            }
-        },
-        resetTimer() {
-            this.secondsPassed = 0;
-            this.minsPassed = 0;
-        }
+    constructor(id, name, sessionld) {
+        this._id = id;
+        this._name = name;
+        this._sessionld = sessionld;
     }
-    // timer.startTimer();
-    // timer.getTime();
-    // timer.stopTimer();
-    // timer.startTimer();
+}
 
-export { timer }
+class UserRepository {
+    constructor(arr) {
+        this._users = Object.freeze(arr);;
+    }
+
+    getUserNames() {
+        return this._users.map(i => i._name)
+    };
+    getUserIds() {
+        return this._users.map(i => i._id)
+    };
+    getUserNameById(id) {
+        let userName = this._users.filter(i => i._id == id)
+        if (userName.length == 0) {
+            console.log('not found')
+            return
+        }
+        return userName
+    };
+}
+
+
+// const users = [
+//     new User('1', 'Tom', '11'),
+//     new User('2', 'Bob', '12'),
+//     new User('3', 'John', '13'),
+// ];
+
+// let test = new UserRepository(users);
+// test.getUserNames()
+// test.getUserIds()
+// test.getUserNameById(11)
