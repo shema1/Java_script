@@ -1,7 +1,7 @@
 class Order {
 
     constructor(price, city, type) {
-        this.id = Math.floor(0 + Math.random() * (100 + 1 - 0));
+        this.id = null;
         this.price = price;
         this.city = city;
         this.type = type;
@@ -19,6 +19,7 @@ class Order {
     }
 
     confirmOrder() {
+        this.id = Math.floor(0 + Math.random() * (100 + 1 - 0));
         this.isConfirmed = true;
         this.dateConfirmed = new Date()
     }
