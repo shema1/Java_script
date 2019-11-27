@@ -23,8 +23,8 @@ class Order {
         this.dateConfirmed = new Date()
     }
 
-    isValidType(info) {
-        if (info === 'Buy' || info === 'Sell') {
+    isValidType() {
+        if (this.info === 'Buy' || this.info === 'Sell') {
             console.log('true')
             return true
         }
