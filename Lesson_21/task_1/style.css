@@ -36,11 +36,15 @@ body {
     padding: 8px;
 }
 
+.actions {
+    display: flex;
+}
+
 .task-input {
     height: 32px;
     margin-right: 16px;
     border-radius: 8px;
-    width: 497px;
+    width: 496px;
     border: 3px solid #ccc;
 }
 
