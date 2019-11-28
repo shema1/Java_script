@@ -39,6 +39,8 @@ body {
   height: 100px;
   margin: 16px;
   padding: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .btn {
