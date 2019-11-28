@@ -12,7 +12,7 @@ const switchTest = () => {
 const logTarget = (text, color) => {
     const eventListElem = document.querySelector('.events-list');
 
-    eventListElem.innerHTML += `<span class='test' style='color:${color}; margin-left:16px'>${text}</span>`
+    eventListElem.innerHTML += `<span class='test' style='color:${color}; margin-left:8px'>${text}</span>`
 
 }
 
