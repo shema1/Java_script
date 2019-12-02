@@ -20,7 +20,7 @@ function getDiff(startDate, endDate) {
     const secInMs = (min * m) / 1000;
     const sec = Math.ceil(diffHour - secInMs);
 
-    return `d${day} h${hours} m${min} s${sec}`
+    return `${day}d ${hours}h ${min}m ${sec}s`
 }
 
 export { getDiff }
