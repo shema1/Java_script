@@ -1,8 +1,3 @@
-const remainder = (firstArg, secondArg) => {
-    return Math.ceil(firstArg - secondArg);
-}
-
-
 function getDiff(startDate, endDate) {
     const d = 1000 * 60 * 60 * 24;
     const h = 1000 * 60 * 60;
@@ -27,3 +22,5 @@ function getDiff(startDate, endDate) {
 
     return `d${day} h${hours} m${min} s${sec}`
 }
+
+export { getDiff }
