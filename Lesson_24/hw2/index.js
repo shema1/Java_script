@@ -37,4 +37,4 @@ function studentsBirthDays(students) {
 }
 
 // console.log(studentsBirthDays(student))
-export { student }
+export { studentsBirthDays }
