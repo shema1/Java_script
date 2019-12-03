@@ -4,7 +4,7 @@ let student = [{
     },
     {
         name: 'Kolya',
-        birthDate: '01/15/2010'
+        birthDate: '02/15/2010'
     },
     {
         name: 'Sasha',
@@ -36,5 +36,5 @@ function studentsBirthDays(students) {
     return obj
 }
 
-// console.log(studentsBirthDays(student))
-export { studentsBirthDays }
+console.log(studentsBirthDays(student))
+    // export { studentsBirthDays }
