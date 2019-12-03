@@ -23,10 +23,10 @@ let student = [{
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-function studentsBirthDays(student) {
+function studentsBirthDays(students) {
 
     let obj = {}
-    student.sort((a, b) => new Date(a.birthDate) - new Date(b.birthDate))
+    students.sort((a, b) => new Date(a.birthDate) - new Date(b.birthDate))
         .map(elem => {
             if (obj[months[new Date(elem.birthDate).getMonth()]] === undefined) {
                 obj[months[new Date(elem.birthDate).getMonth()]] = [];
@@ -36,5 +36,5 @@ function studentsBirthDays(student) {
     return obj
 }
 
-console.log(studentsBirthDays(student))
-    // export { studentsBirthDays }
+// console.log(studentsBirthDays(student))
+export { studentsBirthDays }
