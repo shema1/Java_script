@@ -16,7 +16,7 @@ let student = [{
     },
     {
         name: 'Igor',
-        birthDate: '12/18/2010'
+        birthDate: '12/17/2010'
     }
 ];
 
