@@ -36,5 +36,5 @@ function studentsBirthDays(students) {
     return obj
 }
 
-console.log(studentsBirthDays(student))
-    // export { studentsBirthDays }
+// console.log(studentsBirthDays(student))
+export { studentsBirthDays }
