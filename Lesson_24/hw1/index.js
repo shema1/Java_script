@@ -5,22 +5,20 @@ function getDiff(startDate, endDate) {
 
 
     const diff = Math.abs(endDate - startDate);
-    const day = Math.ceil(diff / d);
 
-
+    const day = Math.trunc(diff / d);
     const daysInMs = day * d;
     const diffDays = diff - daysInMs;
-    const hours = Math.ceil(diffDays / (h));
 
+    const hours = Math.trunc(diffDays / h);
+    const minInMs = diffDays - (hours * h)
 
-    const minInMs = hours * h
-    const diffHour = diffDays - minInMs;
-    const min = Math.ceil(diffHour / (m));
+    const min = Math.trunc(minInMs / (m));
 
-    const secInMs = (min * m) / 1000;
-    const sec = Math.ceil(diffHour - secInMs);
+    const sec = Math.trunc((minInMs - (min * m)) / 1000);
 
     return `${day}d ${hours}h ${min}m ${sec}s`
 }
 
+// console.log(getDiff(startDate, endDate))
 export { getDiff }
