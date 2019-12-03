@@ -23,7 +23,7 @@ let student = [{
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-function studentsBirthDays(students) {
+function studentsBirthDays(student) {
 
     let obj = {}
     student.sort((a, b) => new Date(a.birthDate) - new Date(b.birthDate))
@@ -36,5 +36,5 @@ function studentsBirthDays(students) {
     return obj
 }
 
-// console.log(studentsBirthDays(student))
-export { studentsBirthDays }
+console.log(studentsBirthDays(student))
+    // export { studentsBirthDays }
