@@ -2,14 +2,14 @@ const btnAdd = document.querySelector('.create-task-btn');
 const btnCheck = document.querySelector('.create-task-btn')
 const chBox = document.querySelector('.list')
 
-// const task = [
-//     { id: 3, text: 'Visit party', done: false, date: new Date(2011, 1, 18), dataCheck: undefined },
-//     { id: 2, text: 'Pick up Tom from airport', done: false, date: new Date(2011, 12, 18), dataCheck: undefined },
-//     { id: 1, text: 'Buy milk', done: false, date: new Date(2011, 8, 17), dataCheck: undefined },
-//     { id: 5, text: 'Buy meat', done: true, date: new Date(2011, 6, 23), dataCheck: undefined },
-//     { id: 4, text: 'Visit doctor', done: true, date: new Date(2011, 12, 8), dataCheck: undefined },
+const task = [
+    { id: 3, text: 'Visit party', done: false, date: new Date(2011, 1, 18), dataCheck: undefined },
+    { id: 2, text: 'Pick up Tom from airport', done: false, date: new Date(2011, 12, 18), dataCheck: undefined },
+    { id: 1, text: 'Buy milk', done: false, date: new Date(2011, 8, 17), dataCheck: undefined },
+    { id: 5, text: 'Buy meat', done: true, date: new Date(2011, 6, 23), dataCheck: new Date(2011, 6, 24) },
+    { id: 4, text: 'Visit doctor', done: true, date: new Date(2011, 12, 8), dataCheck: new Date(2011, 12, 12) },
 
-// ]
+]
 
 
 const rederListItem = listItem => {
@@ -17,8 +17,9 @@ const rederListItem = listItem => {
     const listElement = document.querySelector('.list');
     listElement.innerHTML = '';
     const listItemElements = listItem
-        .sort((a, b) => a.date - b.date)
+        .sort((a, b) => b.date - a.date)
         .sort((a, b) => a.done - b.done)
+        .sort((a, b) => b.dataCheck - a.dataCheck)
         .map(({ id, text, done }) => {
             const listItemElem = document.createElement('li')
             listItemElem.classList.add('list__item');
