@@ -1,12 +1,32 @@
-const formatter = new Intl.DateTimeFormat('en', {
-    timeZone: 'UTC',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-});
+const counter = document.querySelector('.counter');
+const counterValueElem = document.querySelector('.counter__value');
 
-const getGreenwichTime = (date) => formatter.format(date);
+const counterChange = e => {
+    const isButton = e.target.classList.contains('counter__button');
 
-console.log(getGreenwichTime(new Date()));
+    if (!isButton) {
+        return;
+    }
+    const action = e.target.dataset.action;
 
-export { getGreenwichTime };
+    const oldValue = Number(counterValueElem.textContent)
+    const newValue = action === 'decrease' ? oldValue - 1 : oldValue + 1;
+    localStorage.setItem('counterValue', newValue);
+    counterValueElem.textContent = newValue;
+};
+
+counter.addEventListener('click', counterChange);
+
+const onCounterChange = e => {
+    counterValueElem.textContent = e.newValue;
+}
+
+window.addEventListener('storage', onCounterChange)
+
+
+const onDocumentLoaded = () => {
+    counterValueElem.textContent = localStorage.getItem('counterValue')
+}
+
+
+document.addEventListener('DOMContentLoaded', onDocumentLoaded)
