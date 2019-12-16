@@ -1,11 +1,11 @@
- const markFavorites = (tree, favorites) => {
-     const isFavorite = favorites.includes(tree.id);
-
-     return {
-         ...tree,
-         isFavorite,
-         nodes: tree.nodes.map(childNode => markFavorites(childNode, favorites)),
-     }
- };
-
- export { markFavorites }
+export function pinger(num, period) {
+    let i = num;
+    console.log('Ping');
+    const interval = setInterval(() => {
+        if (--i > 0) {
+            console.log('Ping');
+        } else {
+            clearInterval(interval);
+        }
+    }, period)
+};
