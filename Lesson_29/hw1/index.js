@@ -1,13 +1,17 @@
 export const requestUserData = (userId, callback) => {
 
 
-    const onLoad = () => {
+    setTimeout(() => {
         if (userId == 'broken') {
             callback(null, 'Failed to load user data')
             return
         }
 
-        callback(null, { name: 'John', age: 17, userId: 'userid777', email: 'userid777@example.com' })
-    }
-    setTimeout(() => onLoad, Math.floor(Math.random() * 3 + 1) * 1000);
+        callback(null, {
+            name: 'John',
+            age: 17,
+            userId: 'userid777',
+            email: 'userid777@example.com'
+        }), Math.floor(Math.random() * 3 + 1) * 1000;
+    })
 }
