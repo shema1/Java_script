@@ -7,7 +7,7 @@ export const requestUserData = (userId, callback) => {
             return
         }
 
-        callback(null, {
+        callback({
             name: 'John',
             age: 17,
             userId: 'userid777',
