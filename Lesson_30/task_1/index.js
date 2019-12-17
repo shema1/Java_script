@@ -18,10 +18,4 @@ const addImage = (imgSrc) => {
     return;
 };
 
-
-// const imgSrc = 'https://i.5sfer.com/post/postImage/thumb-8ipwnn.jpg';
-// const resultPromice = addImageWithPromise(imgSrc)
-
-
-
 export { addImage };
