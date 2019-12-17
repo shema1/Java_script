@@ -1,7 +1,7 @@
 import { addImage } from './addImage.js';
 
 export const addImageV2 = (img) => {
-    return Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         addImage(img, (a, b) => {
 
             if (a) {
