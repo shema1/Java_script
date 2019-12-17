@@ -1,7 +1,7 @@
 import { addImage } from './addImage.js';
 
 export const addImageV2 = (img) => {
-    const promise = Promise((resolve, reject) => {
+    return Promise((resolve, reject) => {
         addImage(img, (a, b) => {
 
             if (a) {
@@ -12,7 +12,7 @@ export const addImageV2 = (img) => {
         })
     })
 
-    return promise
+
 }
 
 // const addImage = (imgSrc, callback) => {
