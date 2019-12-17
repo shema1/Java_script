@@ -12,6 +12,6 @@ export const requestUserData = (userId, callback) => {
             age: 17,
             userId: 'userid777',
             email: 'userid777@example.com'
-        }), Math.floor(Math.random() * 3 + 1) * 1000;
-    })
+        })
+    }, Math.floor(Math.random() * 3 + 1) * 1000);
 }
