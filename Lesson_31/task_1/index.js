@@ -6,12 +6,7 @@ export const requestUserData = userId => {
             }, 500);
         }
         setTimeout(() => {
-            resolve({
-                name: 'John',
-                age: 17,
-                email: `${userId}`,
-                userId,
-            });
+            resolve({ name: 'John', age: 17, userId, email: `${userId}@example.com`, });
         }, 1000);
     });
 };
