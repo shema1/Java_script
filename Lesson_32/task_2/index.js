@@ -1,25 +1,26 @@
-export const asyncCalculator = num => new Promise((resolve) => {
-        setTimeout(() => {
-            console.log(`Initial value: ${num}`)
-            resolve(num);
-        }, 500)
-    })
-    .then(value => new Promise((resolve) => {
-        setTimeout(() => {
-            const result = value * value;
-            console.log(`Squared value: ${result}`);
-            resolve(result);
-        }, 500)
-    }))
-    .then(value => new Promise((resolve) => {
-        setTimeout(() => {
-            const result = value * 2;
-            console.log(`Doubled value: ${result}`);
-            resolve(result);
-        }, 500)
-    }))
+const servers = [
+    'https://server.com/us/',
+    'https://server.com/eu/',
+    'https://server.com/au/'
+];
 
+function request(url) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({
+                userData: {
+                    name: 'Tom',
+                    age: 17,
+                },
+                source: url,
+            });
+        }, (1000 + Math.random() * (3000 - 1000)));
+    });
+};
 
+export function getUserASAP(userId) {
+    const userUrls = servers.map(serverUrl => `${serverUrl}/${userId}`);
+    const requests = userUrls.map(userUrl => request(userUrl));
 
-// asyncCalculator(2)
-//     .then(data => console.log(data))
+    return Promise.race(requests);
+};
