@@ -29,7 +29,7 @@
   const onSearchUser = () => {
       const userName = userNameInputElem.value;
       fetchUserData(userName)
-          .then(userData => renderUserData(userData));
+          .then(userData => renderUserData(userData))
   };
 
   showUserBtnElem.addEventListener('click', onSearchUser);
