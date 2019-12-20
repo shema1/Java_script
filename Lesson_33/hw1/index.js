@@ -1,27 +1,78 @@
-const getValueWithDelay = (value, delay) => {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            console.log(value);
-            resolve(value)
-        }, delay);
-    });
-};
+  const userAvatarElem = document.querySelector('.user__avatar');
+  const userNameElem = document.querySelector('.user__name');
+  const userEmailElem = document.querySelector('.user__email');
+  const userCommitElem = document.querySelector('.user__commit');
 
-const asyncNum1 = getValueWithDelay(undefined, 2000);
-const asyncNum2 = getValueWithDelay('15', 4000);
-const asyncNum3 = getValueWithDelay(10, 5000);
-const asyncNum4 = getValueWithDelay(25, 6000);
+  const defaultAvatar = 'https://avatars3.githubusercontent.com/u10001';
 
-const getSum = (numbers) =>
-    numbers
-    .filter(value => !isNaN(value))
-    .reduce((acc, num) => acc + Number(num), 0);
+  userAvatarElem.src = defaultAvatar;
 
-export const asyncSum = (...asyncNumbers) => {
-    return Promise.all(asyncNumbers)
-        .then(numbers => getSum(numbers))
-        .catch(() => Promise.reject(new Error('Can\'t calculate')));
-};
+  const getMostActiveDevs = (days, userName) => {
+      return fetch(`https://api.github.com/repos/${userName}`)
+          .then(respons => respons.json())
+          .then(respons => filterDevByDate(respons, days))
+          .then(respons => sumDevCommit(respons))
 
-// asyncSum(asyncNum1, asyncNum2, asyncNum3)
-//     .then(result => console.log(result));
+  };
+
+  const dayInMs = day => {
+      let ms = day * 86400000
+      return ms
+  };
+
+  const findDev = (arr, name) => {
+      let test = arr.find(elem => elem.name == name)
+      return test
+  }
+
+  const sumDevCommit = obj => {
+      let arr = []
+      obj.map(elem => {
+          let currentDev = findDev(arr, elem.name)
+          if (currentDev == undefined) {
+              arr.push(elem)
+              return
+          }
+          if (elem.name === currentDev.name) {
+              currentDev.count++;
+          }
+      })
+
+      return arr.sort((a, b) => b.count - a.count)[0]
+  }
+
+  const filterDevByDate = (obj, days) => {
+
+      let filterDate = new Date().getTime() - dayInMs(days)
+      let a = obj.filter(date => new Date(date.commit.author.date) > filterDate)
+          .map(dev => {
+              return {
+                  count: 1,
+                  name: dev.commit.author.name,
+                  email: dev.commit.author.email
+              }
+          })
+
+      return a
+  }
+
+
+  const renderUserData = userData => {
+      const { count, name, email } = userData;
+
+      //   userAvatarElem.src = avatar_url;
+      userCommitElem.textContent = `${ "commits: " + count }`;
+      userNameElem.textContent = `${"name: "+ name}|`;
+      userEmailElem.textContent = `${'email: ' + email}|`
+  };
+
+  const showUserBtnElem = document.querySelector('.name-form__btn');
+  const userNameInputElem = document.querySelector('.name-form__input');
+
+  const onSearchUser = () => {
+      const userName = userNameInputElem.value;
+      getMostActiveDevs(10, userName)
+          .then(userData => renderUserData(userData));
+  };
+
+  showUserBtnElem.addEventListener('click', onSearchUser);
