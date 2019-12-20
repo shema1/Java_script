@@ -7,7 +7,7 @@
 
   userAvatarElem.src = defaultAvatar;
 
-  const getMostActiveDevs = (days, userName) => {
+  export const getMostActiveDevs = (days, userName) => {
       return fetch(`https://api.github.com/repos/${userName}`)
           .then(respons => respons.json())
           .then(respons => filterDevByDate(respons, days))
