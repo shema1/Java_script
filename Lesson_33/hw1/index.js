@@ -3,12 +3,13 @@
 //   const userEmailElem = document.querySelector('.user__email');
 //   const userCommitElem = document.querySelector('.user__commit');
 
-const defaultAvatar = 'https://avatars3.githubusercontent.com/u10001';
+// const defaultAvatar = 'https://avatars3.githubusercontent.com/u10001';
 
-userAvatarElem.src = defaultAvatar;
+// userAvatarElem.src = defaultAvatar;
 
-const getMostActiveDevs = (days, userName) => {
-    return fetch(`https://api.github.com/repos/${userName}`)
+const getMostActiveDevs = (days, userName, repoId) => {
+    // return fetch(`https://api.github.com/repos/${userName}`)
+    return fetch(`https://api.github.com/repos/${userName}/${repoId}/commits?per_page=100`)
         .then(respons => respons.json())
         .then(respons => filterDevByDate(respons, days))
         .then(respons => sumDevCommit(respons))
@@ -50,7 +51,7 @@ const filterDevByDate = (obj, days) => {
                 count: 1,
                 name: dev.commit.author.name,
                 email: dev.commit.author.email,
-                avatar: dev.author.avatar_url
+                // avatar: dev.author.avatar_url
             }
         })
 
