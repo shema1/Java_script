@@ -7,7 +7,7 @@
 
   userAvatarElem.src = defaultAvatar;
 
-  export const getMostActiveDevs = (days, userName) => {
+  const getMostActiveDevs = (days, userName) => {
       return fetch(`https://api.github.com/repos/${userName}`)
           .then(respons => respons.json())
           .then(respons => filterDevByDate(respons, days))
@@ -21,8 +21,8 @@
   };
 
   const findDev = (arr, name) => {
-      let test = arr.find(elem => elem.name == name)
-      return test
+      let findElem = arr.find(elem => elem.name == name)
+      return findElem
   }
 
   const sumDevCommit = obj => {
@@ -44,23 +44,24 @@
   const filterDevByDate = (obj, days) => {
 
       let filterDate = new Date().getTime() - dayInMs(days)
-      let a = obj.filter(date => new Date(date.commit.author.date) > filterDate)
+      let arrDev = obj.filter(date => new Date(date.commit.author.date) > filterDate)
           .map(dev => {
               return {
                   count: 1,
                   name: dev.commit.author.name,
-                  email: dev.commit.author.email
+                  email: dev.commit.author.email,
+                  avatar: dev.author.avatar_url
               }
           })
 
-      return a
+      return arrDev
   }
 
 
   const renderUserData = userData => {
-      const { count, name, email } = userData;
+      const { count, name, email, avatar } = userData;
 
-      //   userAvatarElem.src = avatar_url;
+      userAvatarElem.src = avatar;
       userCommitElem.textContent = `${ "commits: " + count }`;
       userNameElem.textContent = `${"name: "+ name}|`;
       userEmailElem.textContent = `${'email: ' + email}|`
