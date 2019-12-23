@@ -10,12 +10,14 @@ const inputPassword = document.querySelector('#password');
 
 const createUser = userData => {
     return fetch(baseUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-        },
-        body: JSON.stringify(userData)
-    })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+            },
+            body: JSON.stringify(userData)
+        })
+        .then(response => response.json())
+        .then(data => JSON.stringify(data));
 }
 
 const validator = () => {
@@ -37,11 +39,12 @@ const sendUser = (event) => {
     }
     createUser(newUser)
         .then(data => {
-            inputEmail.value = '',
-                inputName.value = '',
-                inputPassword.value = '',
-                sendBtn.disabled = true.
-            alert(data)
+            console.log(data)
+            inputEmail.value = '';
+            inputName.value = '';
+            inputPassword.value = '';
+            sendBtn.disabled = true;
+            alert(data);
         })
         .catch(() => {
             errorText.textContent = 'Failed to create user';
