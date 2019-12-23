@@ -7,6 +7,7 @@ const errorText = document.querySelector('.error-text');
 const inputEmail = document.querySelector('#email');
 const inputName = document.querySelector('#name');
 const inputPassword = document.querySelector('#password');
+const form = document.querySelector('.login-form')
 
 const createUser = userData => {
     return fetch(baseUrl, {
@@ -32,14 +33,11 @@ const validator = () => {
 
 const sendUser = (event) => {
     event.preventDefault();
-    let newUser = {
-        name: inputEmail.value,
-        email: inputEmail.value,
-        password: inputPassword.value,
-    }
+    const formData = [...new FormData(form)]
+        .reduce((acc, [field, value]) => ({...acc, [field]: value }), {});
+    let newUser = formData
     createUser(newUser)
         .then(data => {
-            console.log(data)
             inputEmail.value = '';
             inputName.value = '';
             inputPassword.value = '';
