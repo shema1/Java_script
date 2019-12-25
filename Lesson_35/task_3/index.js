@@ -30,6 +30,10 @@
               renderRepos(respoList)
               hideSpiner()
           })
+          .catch(err => {
+              hideSpiner()
+              alert(err.message)
+          });
   };
 
   showUserBtnElem.addEventListener('click', onSearchUser);
