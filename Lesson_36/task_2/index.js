@@ -26,7 +26,7 @@
           const reposList = await fetchRepositories(userData.repos_url);
           renderRepos(reposList)
       } catch (err) {
-          alert(err.message)
+          alert('Failed to load data')
       } finally {
           hideSpiner()
       }
