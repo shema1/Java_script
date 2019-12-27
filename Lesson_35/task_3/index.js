@@ -32,7 +32,7 @@
           })
           .catch(err => {
               hideSpiner()
-              alert(err.message)
+              return alert(err.message)
           });
   };
 
