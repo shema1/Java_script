@@ -32,7 +32,7 @@
           })
           .catch(err => {
               hideSpiner()
-              alert('Failed to load data')
+              alert(err.message)
           });
   };
 
