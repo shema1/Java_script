@@ -1,24 +1,36 @@
-const successRequest = Promise.resolve({ name: "Tom" });
-
-successRequest
-    .then(function onSuccess1(data) {
-        throw new Error('Error with data')
-    })
-    .catch(function onError1(error) {
-        console.error("onError1", error.message);
-    })
+  import { fetchUserData, fetchRepositories } from './geateways.js'
+  import { renderUserData } from './user.js'
+  import { renderRepos, cleanReposList } from './repos.js'
+  import { showSpiner, hideSpiner } from './spiner.js'
 
 
-const failRequest = Promise.reject(new Error("Something went wrong"));
+  const defaultUser = {
+      avatar_url: 'https://avatars3.githubusercontent.com/u10001',
+      name: '',
+      location: ''
+  }
 
-failRequest
-    .catch(function onError2(error) {
-        console.error("onError2", error.message);
-        throw new Error('Server error')
-    })
-    .then(function onSuccess2(data) {
-        console.log("onSuccess2", data);
-    })
-    .catch(function onError3(error) {
-        console.error("onError3", error.message);
-    });
+  renderUserData(defaultUser)
+
+  const showUserBtnElem = document.querySelector('.name-form__btn');
+  const userNameInputElem = document.querySelector('.name-form__input');
+
+
+  const onSearchUser = async() => {
+      showSpiner()
+      cleanReposList()
+      const userName = userNameInputElem.value;
+      try {
+          const userData = await fetchUserData(userName);
+          renderUserData(userData);
+          const reposList = await fetchRepositories(userData.repos_url);
+          renderRepos(reposList)
+      } catch (err) {
+          alert(err.message)
+      } finally {
+          hideSpiner()
+      }
+
+  };
+
+  showUserBtnElem.addEventListener('click', onSearchUser);
