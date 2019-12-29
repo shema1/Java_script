@@ -1,18 +1,22 @@
-const getUsersBlogs = async(...userId) => {
+export const getUsersBlogs = async(...userId) => {
 
 
     const wraper = userId;
     let test = []
     for (let index = 0; index < wraper.length; index++) {
-        let response = await fetch(`https://api.github.com/users/${wraper[index]}`)
-        if (!response.ok) throw new Error('Failed to load data');
-        let userData = await (response.json())
-        test.push(userData.blog)
+        try {
+            let response = await fetch(`https://api.github.com/users/${wraper[index]}`)
+            let userData = await (response.json())
+            test.push(userData.blog)
+        } catch (e) {
+            console.log(e.message)
+        }
+        // if (!response.ok) throw new Error('Failed to load data');
     }
 
     return test
 }
 
-export { getUsersBlogs }
+// export { getUsersBlogs }
 // getUsersBlogs('google', "facebook", 'shema1')
 //     .then(response => console.log(response));
