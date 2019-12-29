@@ -1,11 +1,11 @@
-export const getUsersBlogs = async(...userId) => {
+export const getUsersBlogs = async(userId) => {
 
 
-    const wraper = userId;
+    // const wraper = userId;
     let test = []
-    for (let index = 0; index < wraper.length; index++) {
+    for (let index = 0; index < userId.length; index++) {
         try {
-            let response = await fetch(`https://api.github.com/users/${wraper[index]}`)
+            let response = await fetch(`https://api.github.com/users/${userId[index]}`)
             let userData = await (response.json())
             test.push(userData.blog)
         } catch (e) {
