@@ -14,5 +14,5 @@
  }
 
 
- getUsersBlogs('google', "facebook", 'shema1')
+ getUsersBlogs(['google', "facebook", 'shema1'])
      .then(response => console.log(response));
