@@ -1,4 +1,4 @@
-  const getUsersBlogs = async(userId) => {
+  export const getUsersBlogs = async(userId) => {
 
       let test = []
       try {
