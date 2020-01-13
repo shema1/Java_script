@@ -29,6 +29,7 @@
           alert('Failed to load data')
       } finally {
           hideSpiner()
+          
       }
 
   };
